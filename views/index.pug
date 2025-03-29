@@ -8,6 +8,9 @@ html
     ul
       each item in items
         li= item.name
+        form(action="/delete" method="POST")
+          input(type="hidden" name="name" value=item.name)
+          button(type="submit") Delete
     form(action="/add" method="POST")
       input(type="text" name="name" placeholder="Enter item" required)
       button(type="submit") Add Item
